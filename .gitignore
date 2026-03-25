@@ -1,0 +1,68 @@
+# Build output
+bin/
+obj/
+out/
+publish/
+
+# .NET / ASP.NET Core
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+.vs/
+_ReSharper*/
+*.resharper
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Runtime & logs
+*.log
+*.tmp
+*.temp
+nohup.out
+logs/
+
+# Secrets & environment
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+secrets.json
+*.pfx
+*.key
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE — Visual Studio Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# IDE — Rider
+.idea/
+
+# Frontend (Node.js / npm / pnpm)
+node_modules/
+dist/
+.next/
+.nuxt/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
