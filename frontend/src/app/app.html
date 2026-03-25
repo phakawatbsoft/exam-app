@@ -1,0 +1,33 @@
+<div [formGroup]="examForm" class="container mx-auto px-4">
+  <div class="flex items-center gap-3 mb-3">
+    <label class="whitespace-nowrap">ชื่อ - สกุล</label>
+    <input type="text" pInputText formControlName="fullName" />
+  </div>
+
+  <div formGroupName="answers">
+    @for (question of questions; track question.id) {
+    <p-card class="mb-5">
+      <div class="mt-4 mb-2">{{$index + 1}}. {{question.questionText}}</div>
+      <div class="flex flex-col gap-2">
+        @for (option of question.parsedOptions; track option) {
+        <div class="flex items-center">
+          <p-radiobutton name="{{question.id}}" [inputId]="question.id + '_' + option" [formControlName]="question.id"
+            [value]="option" />
+          <label [for]="question.id + '_' + option" class="ml-2">{{ option }}</label>
+        </div>
+        }
+      </div>
+    </p-card>
+    }
+  </div>
+
+  <div class="mt-4">
+    @if (!answer) {
+    <p-button label="ส่งข้อสอบ" (click)="submitExam()" [disabled]="examForm.invalid" />
+    }
+    @else {
+    <p-button label="สอบอีกครั้ง" (click)="retakeExam()" />
+    <span class="font-bold px-5">คุณ {{ examForm.getRawValue().fullName }} สอบได้คะแนน : {{ score }} / {{ questions.length }}</span>
+    }
+  </div>
+</div>
