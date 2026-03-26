@@ -66,3 +66,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .pnpm-store/
+
+# AI assistant
+CLAUDE.md
+.cursor/
+.cursorrules
+.github/copilot-instructions.md
